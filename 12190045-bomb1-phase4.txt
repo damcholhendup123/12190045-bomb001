@@ -14,7 +14,7 @@ Dump of assembler code for function phase_4:
    0x000000000040102a <+28>:    mov    $0x4025cf,%esi                 // it reads the input format;
    0x000000000040102f <+33>:    callq  0x400bb0 <__isoc99_sscanf@plt>
    0x0000000000401034 <+38>:    cmp    $0x2,%eax                     // 2 is compare with value of %eax, eax = 2;
-   0x0000000000401037 <+41>:    jne    0x40103f <phase_4+49>        // since it is equal it will escape a bomb
+   0x0000000000401037 <+41>:    jne    0x40103f <phase_4+49>        // since it is equal the bomb will not explode
    0x0000000000401039 <+43>:    cmpl   $0xe,(%rsp)                  // 0xe = 14, 14 is compared with first term,
    0x000000000040103d <+47>:    jbe    0x401044 <phase_4+54>   // if the value of first term is less than 14 it continues ,else jumps to +54
    0x000000000040103f <+49>:    callq  0x40143d <explode_bomb> 
@@ -25,7 +25,7 @@ Dump of assembler code for function phase_4:
    0x0000000000401056 <+72>:    cmp    $0x23,%eax                  // 0x23 = 35; 35 is compared with the value of %eax; from here we can know the first input;
    0x0000000000401059 <+75>:    jne    0x401062 <phase_4+84>     // if it is not equal, the bomb will explode
    0x000000000040105b <+77>:    cmpl   $0x23,0x4(%rsp)           // second input is compared  with the value of 35, and sees if second value is equal to 35, 
-   0x0000000000401060 <+82>:    je     0x401067 <phase_4+89>     // second input is known,
+   0x0000000000401060 <+82>:    je     0x401067 <phase_4+89>     // second input is known
    0x0000000000401062 <+84>:    callq  0x40143d <explode_bomb>
    0x0000000000401067 <+89>:    mov    0x8(%rsp),%rax
    0x000000000040106c <+94>:    xor    %fs:0x28,%rax
